@@ -76,10 +76,10 @@ class TextTestResult(_TextTestResult):
         self.errors.append((test, exc_info))
         test.passed = False
         self.printLabel('ERROR')
-        print("addError detailed exception: " + exc_info)
-        print("error's tb: ")
+        self.printLabel("addError detailed exception: " + exc_info)
+        self.printLabel("error's tb: ")
         traceback.print_tb(tb)
-        print("Current stack:")
+        self.printLabel("Current stack:")
         traceback.print_stack()
 
     # override to bypass changes in 2.7
